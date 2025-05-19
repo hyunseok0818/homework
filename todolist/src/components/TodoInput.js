@@ -5,7 +5,7 @@ function TodoInput({ addTodo, inputRef }) {
 
   const handleAdd = () => {
     addTodo(inputValue);
-    setInputValue("");
+    setInputValue(""); //입력부분 빈칸으로 만들기
   };
 
   return (
@@ -15,7 +15,7 @@ function TodoInput({ addTodo, inputRef }) {
         type="text"
         placeholder="할 일을 입력하세요."
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)} //입력할 때마다 inputvalue 업데이트해준다
       />
       <button onClick={handleAdd}>등록</button>
     </div>

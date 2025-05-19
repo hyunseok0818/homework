@@ -1,12 +1,10 @@
 import React from "react";
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos }) {
   return (
     <ul>
       {todos.map((todo, index) => (
-        <li key={index}>
-          {todo} <button onClick={() => deleteTodo(index)}>삭제</button>
-        </li>
+        <li key={index}>{todo}</li>
       ))}
     </ul>
   );

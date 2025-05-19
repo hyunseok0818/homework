@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useRef } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
@@ -9,21 +8,17 @@ function App() {
 
   // 할 일 추가 핸들러
   const addTodo = (newTodo) => {
-    if (newTodo.trim() === "") return;
-    setTodos([...todos, newTodo]);
+    setTodos([...todos, newTodo]); // 새로운 할일 todos 배열에 추가
     inputRef.current.focus();
   };
 
-  // 할 일 삭제 핸들러
-  const deleteTodo = (index) => {
-    setTodos(todos.filter((_, idx) => idx !== index));
-  };
+  //삭제 핸들러는 구현못함
 
   return (
     <div className="App">
       <h1>Todo List</h1>
       <TodoInput addTodo={addTodo} inputRef={inputRef} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoList todos={todos} />
     </div>
   );
 }
